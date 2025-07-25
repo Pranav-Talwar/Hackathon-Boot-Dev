@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "backend",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-06-25",
+
+  "vars": {
+    // "DATABASE_URL": "set-at-deploy",
+    // "JWT_SECRET":   "set-at-deploy"
+  }
+}
