@@ -3,6 +3,7 @@
   "name": "backend",
   "main": "src/index.ts",
   "compatibility_date": "2025-06-25",
+  "compatibility_flags": ["nodejs_compat"],
 
   "vars": {
     // "DATABASE_URL": "set-at-deploy",
