@@ -1,13 +1,16 @@
 import { Hono } from 'hono'
+import { userRouter } from './routes/user'
+import { cors } from 'hono/cors'
 
-const app = new Hono()
+type Env = {
+  DATABASE_URL: string
+  JWT_SECRET: string
+}
 
-app.post('/api/v1/signup', (c) => {
-	return c.text('signup route')
-})
+const app = new Hono<{ Bindings: Env }>()
 
-app.post('/api/v1/signin', (c) => {
-	return c.text('signin route')
-})
+app.use('/api/*', cors())
+app.route('/api/v1/user', userRouter)
+app.get('/', c => c.text('Hono ✓ Prisma ✓'))
 
 export default app
